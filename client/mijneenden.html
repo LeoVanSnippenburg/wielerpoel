@@ -1,0 +1,100 @@
+<template name="mijneenden">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>Jouw punten</strong></div>
+            <table class="table table-condensed">
+                <tbody>
+                    <tr>
+                      <td><strong>Totaal:</strong></td>
+                      <td style="text-align: right">{{mijntotaal}}</td>
+                    </tr>
+                    <tr>
+                      <td>Op de bank:</td>
+                      <td style="text-align: right">{{opdebank}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>Jouw team</strong></div>
+            <table class="table  table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Renner</th>
+                        <th>Team</th>
+                        <th style="text-align: right">Punten</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#each toonMijnRenners}}
+                    <tr class="verkoop">
+                      <td>{{rank}}</td>
+                      <td><img class="flag" src="country/{{toLowerCase nationality}}.gif" align="middle"> {{rider}}
+                        {{#if under23 dob}}<img  class="flag" src="classification-youth.png" align="middle">{{/if}}</td>
+                      <td>{{team}}</td>
+                      <td style="text-align: right"><span class="badge">{{points}}</span></td>
+                    </tr>
+                {{/each}}
+              </tbody>
+            </table>
+        </div>
+
+        <p class="bg-warning" style="padding: 10px;">Om een renner te verkopen dubbelklik je op de naam van de renner in "Jouw team". Om een renner te kopen dubbelklik je op de naam van de renner in de lijst "Kies uit deze renners".</p>
+        <p>&nbsp;</p>
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>Jouw transacties</strong></div>
+            <table class="table  table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Type</th>
+                        <th>Renner</th>
+                        <th style="text-align: right">Punten</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#each toonMijnTransacties}}
+                    <tr>
+                      <td>{{datum}}</td>
+                      <td>{{type}}</td>
+                      <td>{{rider}}</td>
+                      <td style="text-align: right"><span class="badge">{{points}}</span></td>
+                    </tr>
+                {{/each}}
+              </tbody>
+            </table>
+
+        </div>
+
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>Kies uit deze renners</strong></div>
+            <table class="table  table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Renner</th>
+                        <th>Team</th>
+                        <th style="text-align: right">Punten</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#each toonRenners}}
+                    <tr class="rennerselectable">
+                      <td>{{rank}}</td>
+                      <td><img class="flag" src="country/{{toLowerCase nationality}}.gif" align="middle"> {{rider}}
+                        {{#if under23 dob}}<img  class="flag" src="classification-youth.png" align="middle">{{/if}}</td>
+                      <td>{{team}}</td>
+                      <td style="text-align: right"><span class="badge">{{points}}</span></td>
+                    </tr>
+                {{/each}}
+              </tbody>
+            </table>
+        </div>
+    </div>
+
+</template>

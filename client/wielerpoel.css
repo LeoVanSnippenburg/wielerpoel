@@ -1,0 +1,8 @@
+table {
+    cursor: pointer;
+}
+
+img.flag {
+    border: none;
+    margin-right: 4px;
+}
