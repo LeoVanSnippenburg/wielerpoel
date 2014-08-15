@@ -1,14 +1,14 @@
 Accounts.ui.config({
-    passwordSignupFields: 'USERNAME_AND_EMAIL'
+	passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
 
 Meteor.Router.add({
-    '/tips': 'tips',
-    '/waterstand': 'waterstand',
-    '/mijneenden': 'mijneenden',
-    '/uci': 'uci',
-    '/': 'home',
-    '*': 'home'
+	'/tips': 'tips',
+	'/waterstand': 'waterstand',
+	'/mijneenden': 'mijneenden',
+	'/uci': 'uci',
+	'/': 'home',
+	'*': 'home'
 });
 
 Meteor.subscribe("uci");
@@ -19,23 +19,23 @@ Meteor.startup(function () {
 });
 
 function hideAddressBar() {
-    if(!window.location.hash) {
-        if(document.height <= window.outerHeight + 10)  {
-            document.body.style.height = (window.outerHeight + 50) +'px';
-            setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
-        } else {
-            setTimeout( function(){ window.scrollTo(0, 1); }, 0 );
-        }
-    }
+	if(!window.location.hash) {
+		if(document.height <= window.outerHeight + 10)  {
+			document.body.style.height = (window.outerHeight + 50) +'px';
+			setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+		} else {
+			setTimeout( function(){ window.scrollTo(0, 1); }, 0 );
+		}
+	}
 }
 
 if (Meteor.isClient) {
-    window.addEventListener("load", hideAddressBar );
-    window.addEventListener("orientationchange", hideAddressBar );
+	window.addEventListener("load", hideAddressBar );
+	window.addEventListener("orientationchange", hideAddressBar );
 }
 
 if (Meteor.isServer) {
-    // process.env.MAIL_URL="smtp://support%40editoo.nl:pass@smtp.gmail.com:465/";
+	// process.env.MAIL_URL="smtp://support%40editoo.nl:pass@smtp.gmail.com:465/";
 }
 
 wedstrijden = [{datum: "27/4/14", wedstrijd: "Luik-Bastenaken-Luik"},

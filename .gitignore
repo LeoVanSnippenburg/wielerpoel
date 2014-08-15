@@ -1,1 +1,4 @@
 .ftpsync_settings
+/.meteor/
+/smart.lock
+/starter.command
