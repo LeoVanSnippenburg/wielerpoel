@@ -1,84 +1,84 @@
 <template name="waterstand">
-    <div class="col-sm-6">
-        <div class="panel panel-default">
-            <div class="panel-heading"><strong>De waterstand</strong></div>
-            <table class="table table-condensed table-hover" style="">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Ploegleider</th>
-                        <th style="text-align: right">Punten</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {{#each toonStand}}
-                    <tr class="ploeglijer">
-                      <td>{{rank}}</td>
-                      <td>{{Ploegleider}}<!-- <span style="color: white;">{{mail}}</span>--></td>
-                      <td style="text-align: right" alt="{{mail}}"><span class="badge">{{points}}</span></td>
-                    </tr>
-                {{/each}}
-              </tbody>
-            </table>
-        </div>
-    </div>
+	<div class="col-sm-6">
+		<div class="panel panel-default">
+			<div class="panel-heading"><strong>De waterstand</strong></div>
+			<table class="table table-condensed table-hover" style="">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Ploegleider</th>
+						<th style="text-align: right">Punten</th>
+					</tr>
+				</thead>
+				<tbody>
+				{{#each toonStand}}
+					<tr class="ploeglijer">
+						<td>{{rank}}</td>
+						<td>{{Ploegleider}}&nbsp;<span style="color: #fff;">({{mail}})</span></td>
+						<td style="text-align: right" alt="{{mail}}"><span class="badge">{{points}}</span></td>
+					</tr>
+				{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
 
-    <div class="col-sm-6">
-        <div class="panel panel-default">
-            <div class="panel-heading"><strong>De ploeg van {{geselecteerdePloegleider}}</strong></div>
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Renner</th>
-                        <th>Team</th>
-                        <th style="text-align: right">Punten</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {{#each geselecteerdePloeg}}
-                    <tr>
-                      <td>{{rank}}</td>
-                      <td><img class="flag" src="country/{{toLowerCase nationality}}.gif" align="middle"> {{rider}}
-                        {{#if under23 dob}}<img  class="flag" src="classification-youth.png" align="middle">{{/if}}
-                        {{#if newpoints}}&nbsp;<strong>+{{newpoints}}</strong>{{/if}}
-                        </td>
-                      <td>{{team}}</td>
-                        {{#if newpoints}}
-                            <td style="text-align: right"><span class="badge" style="color:red;">{{points}}</span></td>
-                        {{else}}
-                            <td style="text-align: right"><span class="badge">{{points}}</span></td>
-                        {{/if}}
-                    </tr>
-                {{/each}}
-              </tbody>
-            </table>
-        </div>
+	<div class="col-sm-6">
+		<div class="panel panel-default">
+			<div class="panel-heading"><strong>De ploeg van {{geselecteerdePloegleider}}</strong></div>
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Renner</th>
+						<th>Team</th>
+						<th style="text-align: right">Punten</th>
+					</tr>
+				</thead>
+				<tbody>
+				{{#each geselecteerdePloeg}}
+					<tr>
+						<td>{{rank}}</td>
+						<td><img class="flag" src="country/{{toLowerCase nationality}}.gif" align="middle"> {{rider}}
+						{{#if under23 dob}}<img  class="flag" src="classification-youth.png" align="middle">{{/if}}
+						{{#if newpoints}}&nbsp;<strong>+{{newpoints}}</strong>{{/if}}
+						</td>
+						<td>{{team}}</td>
+						{{#if newpoints}}
+							<td style="text-align: right"><span class="badge" style="color:red;">{{points}}</span></td>
+						{{else}}
+							<td style="text-align: right"><span class="badge">{{points}}</span></td>
+						{{/if}}
+					</tr>
+				{{/each}}
+				</tbody>
+			</table>
+		</div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading"><strong>De transacties van {{geselecteerdePloegleider}}</strong></div>
-            <table class="table  table-condensed table-hover">
-                <thead>
-                    <tr>
-                        <th>Datum</th>
-                        <th>Type</th>
-                        <th>Renner</th>
-                        <th style="text-align: right">Punten</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {{#each geselecteerdeTransacties}}
-                    <tr>
-                      <td>{{datum}}</td>
-                      <td>{{type}}</td>
-                      <td>{{rider}}</td>
-                      <td style="text-align: right"><span class="badge">{{points}}</span></td>
-                    </tr>
-                {{/each}}
-              </tbody>
-            </table>
+		<div class="panel panel-default">
+			<div class="panel-heading"><strong>De transacties van {{geselecteerdePloegleider}}</strong></div>
+			<table class="table  table-condensed table-hover">
+				<thead>
+					<tr>
+						<th>Datum</th>
+						<th>Type</th>
+						<th>Renner</th>
+						<th style="text-align: right">Punten</th>
+					</tr>
+				</thead>
+				<tbody>
+				{{#each geselecteerdeTransacties}}
+					<tr>
+						<td>{{datum}}</td>
+						<td>{{type}}</td>
+						<td>{{rider}}</td>
+						<td style="text-align: right"><span class="badge">{{points}}</span></td>
+					</tr>
+				{{/each}}
+				</tbody>
+			</table>
 
-        </div>
-    </div>
+		</div>
+	</div>
 
 </template>
