@@ -1,5 +1,4 @@
 .ftpsync_settings
-/.meteor/
 /smart.lock
 /starter.command
 /server/kadira.js

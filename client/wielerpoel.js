@@ -6,6 +6,7 @@ Accounts.config({
 	forbidClientAccountCreation: true
 });
 
+/*
 Meteor.Router.add({
 	'/tips': 'tips',
 	'/waterstand': 'waterstand',
@@ -13,6 +14,33 @@ Meteor.Router.add({
 	'/uci': 'uci',
 	'/': 'home',
 	'*': 'home'
+});
+*/
+Router.configure({
+	layoutTemplate: 'content',
+	notFoundTemplate: '404'
+});
+
+Router.map(function() {
+	this.route('home', {
+		path: '/'
+	});
+	this.route('tips',{
+		path:'/tips'
+	});
+	this.route('waterstand',{
+		path:'/waterstand'
+	});
+	this.route('mijneenden',{
+		path:'/mijneenden'
+	});
+	this.route('uci',{
+		path:'/uci'
+	});
+
+	this.route('404', {
+		path: '*'
+	});
 });
 
 Meteor.subscribe("uci");

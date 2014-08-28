@@ -1,26 +1,28 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="apple-touch-icon" href="icon.png" />
-    <meta name="apple-touch-fullscreen" content="YES"/>
-    <title>wielerpoel</title>
-</head>
+<template name="content">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="apple-touch-icon" href="icon.png" />
+		<meta name="apple-touch-fullscreen" content="YES"/>
+		<title>wielerpoel</title>
+	</head>
 
-<body>
-    <div class="container">
-        {{> menu}}
-        {{> renderPage}}
-    </div>
+	<body>
+		<div class="container">
+			{{> menu}}
+			{{> yield}}
+		</div>
 
-    <div class="container footer">
-        <p  style="color: #777;">&copy; Editoo b.v. 2014</p>
-    </div>
+		<div class="container footer">
+			<p  style="color: #777;">&copy; Editoo b.v. 2014</p>
+		</div>
 
-</body>
+	</body>
+</template>
 
 <template name="404">
-  <h1>Oops, pagina niet gevonden ...</h1>
-  <p>Geen idee waar 'ie is gebleven. Zoeken gaat nu ook effe niet!</p>
+	<h1>Oops, pagina niet gevonden ...</h1>
+	<p>Geen idee waar 'ie is gebleven. Zoeken gaat nu ook effe niet!</p>
 </template>

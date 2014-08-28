@@ -6,7 +6,8 @@
 standard-app-packages
 accounts-password
 email
-bootstrap-3
-accounts-ui-bootstrap-3
-router
-kadira
+iron:router
+meteorhacks:kadira
+ian:bootstrap-3
+ian:accounts-ui-bootstrap-3
+
